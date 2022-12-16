@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import {
   View,
@@ -63,62 +62,7 @@ export default class TextField extends PureComponent {
     disabled: false,
   };
 
-  static propTypes = {
-    ...TextInput.propTypes,
-
-    animationDuration: PropTypes.number,
-
-    fontSize: PropTypes.number,
-    labelFontSize: PropTypes.number,
-
-    contentInset: PropTypes.shape({
-      top: PropTypes.number,
-      label: PropTypes.number,
-      input: PropTypes.number,
-      left: PropTypes.number,
-      right: PropTypes.number,
-      bottom: PropTypes.number,
-    }),
-
-    labelOffset: Label.propTypes.offset,
-
-    labelTextStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
-    titleTextStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
-    affixTextStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
-
-    tintColor: PropTypes.string,
-    textColor: PropTypes.string,
-    baseColor: PropTypes.string,
-
-    label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
-    title: PropTypes.string,
-
-    characterRestriction: PropTypes.number,
-
-    error: PropTypes.string,
-    errorColor: PropTypes.string,
-
-    lineWidth: PropTypes.number,
-    activeLineWidth: PropTypes.number,
-    disabledLineWidth: PropTypes.number,
-
-    lineType: Line.propTypes.lineType,
-    disabledLineType: Line.propTypes.lineType,
-
-    disabled: PropTypes.bool,
-
-    formatText: PropTypes.func,
-
-    renderLeftAccessory: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-    renderRightAccessory: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
-
-    prefix: PropTypes.string,
-    suffix: PropTypes.string,
-
-    containerStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
-    inputContainerStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
-    labelLineHeight: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
-  };
+  static propTypes = {};
 
   static inputContainerStyle = styles.inputContainer;
 

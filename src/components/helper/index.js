@@ -1,23 +1,10 @@
-import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import { Animated } from 'react-native';
 
 import styles from './styles';
 
 export default class Helper extends PureComponent {
-  static propTypes = {
-    title: PropTypes.string,
-    error: PropTypes.string,
-
-    disabled: PropTypes.bool,
-
-    style: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
-
-    baseColor: PropTypes.string,
-    errorColor: PropTypes.string,
-
-    focusAnimation: PropTypes.instanceOf(Animated.Value),
-  };
+  static propTypes = {};
 
   constructor(props) {
     super(props);
