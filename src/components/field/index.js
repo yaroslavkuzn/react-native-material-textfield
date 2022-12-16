@@ -500,6 +500,7 @@ export default class TextField extends PureComponent {
       fontSize,
       labelFontSize,
       labelTextStyle,
+      labelLineHeight,
     } = this.props;
 
     return (
