@@ -8,8 +8,6 @@ export default class Affix extends PureComponent {
     numberOfLines: 1,
   };
 
-  static propTypes = {};
-
   render() {
     let { labelAnimation, style, children, type, fontSize, color } = this.props;
 

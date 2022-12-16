@@ -4,8 +4,6 @@ import { Animated } from 'react-native';
 import styles from './styles';
 
 export default class Helper extends PureComponent {
-  static propTypes = {};
-
   constructor(props) {
     super(props);
 

@@ -12,8 +12,6 @@ export default class Line extends PureComponent {
     restricted: false,
   };
 
-  static propTypes = {};
-
   static getDerivedStateFromProps(props, state) {
     let { lineWidth, activeLineWidth, disabledLineWidth } = props;
 

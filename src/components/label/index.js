@@ -10,8 +10,6 @@ export default class Label extends PureComponent {
     restricted: false,
   };
 
-  static propTypes = {};
-
   render() {
     let {
       label,

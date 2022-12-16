@@ -28,10 +28,7 @@
     "url": "git://github.com/n4kz/react-native-material-textfield.git"
   },
 
-  "dependencies": {
-    "prop-types": "^15.5.9"
-  },
-
+  "dependencies": {},
   "peerDependencies": {
     "react": ">=16.3.0",
     "react-native": ">=0.55.0"

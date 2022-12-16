@@ -62,8 +62,6 @@ export default class TextField extends PureComponent {
     disabled: false,
   };
 
-  static propTypes = {};
-
   static inputContainerStyle = styles.inputContainer;
 
   static contentInset = {

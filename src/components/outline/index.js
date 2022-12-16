@@ -10,8 +10,6 @@ export default class Line extends PureComponent {
     restricted: false,
   };
 
-  static propTypes = {};
-
   borderProps() {
     let {
       disabled,
