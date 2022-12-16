@@ -12,8 +12,8 @@ export default class Counter extends PureComponent {
     baseColor: PropTypes.string.isRequired,
     errorColor: PropTypes.string.isRequired,
 
-    style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
-    counterExtraProps: PropTypes.object,
+    style: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
+    counterExtraProps: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
   };
 
   render() {

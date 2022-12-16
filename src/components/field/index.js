@@ -82,9 +82,9 @@ export default class TextField extends PureComponent {
 
     labelOffset: Label.propTypes.offset,
 
-    labelTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
-    titleTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
-    affixTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    labelTextStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
+    titleTextStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
+    affixTextStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
 
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
@@ -115,8 +115,8 @@ export default class TextField extends PureComponent {
     prefix: PropTypes.string,
     suffix: PropTypes.string,
 
-    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
-    inputContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    containerStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
+    inputContainerStyle: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
     labelLineHeight: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   };
 

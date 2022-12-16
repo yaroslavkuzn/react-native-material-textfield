@@ -43,7 +43,7 @@ export default class Label extends PureComponent {
       y1: PropTypes.number,
     }),
 
-    style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    style: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
     label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     lineHeight: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]), 
   };

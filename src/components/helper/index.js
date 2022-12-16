@@ -11,7 +11,7 @@ export default class Helper extends PureComponent {
 
     disabled: PropTypes.bool,
 
-    style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    style: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.number]),
 
     baseColor: PropTypes.string,
     errorColor: PropTypes.string,
