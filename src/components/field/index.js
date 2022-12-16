@@ -2,12 +2,10 @@ import PropTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import {
   View,
-  Text,
   TextInput,
   Animated,
   StyleSheet,
   Platform,
-  ViewPropTypes,
 } from 'react-native';
 
 import Line from '../line';
@@ -84,15 +82,15 @@ export default class TextField extends PureComponent {
 
     labelOffset: Label.propTypes.offset,
 
-    labelTextStyle: Text.propTypes.style,
-    titleTextStyle: Text.propTypes.style,
-    affixTextStyle: Text.propTypes.style,
+    labelTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    titleTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    affixTextStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
 
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
     baseColor: PropTypes.string,
 
-    label: PropTypes.string,
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     title: PropTypes.string,
 
     characterRestriction: PropTypes.number,
@@ -111,14 +109,15 @@ export default class TextField extends PureComponent {
 
     formatText: PropTypes.func,
 
-    renderLeftAccessory: PropTypes.func,
-    renderRightAccessory: PropTypes.func,
+    renderLeftAccessory: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
+    renderRightAccessory: PropTypes.oneOfType([PropTypes.func, PropTypes.bool]),
 
     prefix: PropTypes.string,
     suffix: PropTypes.string,
 
-    containerStyle: (ViewPropTypes || View.propTypes).style,
-    inputContainerStyle: (ViewPropTypes || View.propTypes).style,
+    containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    inputContainerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    labelLineHeight: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
   };
 
   static inputContainerStyle = styles.inputContainer;
@@ -224,6 +223,7 @@ export default class TextField extends PureComponent {
     let options = {
       toValue: this.focusState(),
       duration,
+      useNativeDriver: false,
     };
 
     startAnimation(focusAnimation, options, this.onFocusAnimationEnd);
@@ -510,6 +510,7 @@ export default class TextField extends PureComponent {
         offset={offset}
         label={label}
         style={labelTextStyle}
+        lineHeight={labelLineHeight}
       />
     );
   }
@@ -564,6 +565,8 @@ export default class TextField extends PureComponent {
       errorColor,
       titleTextStyle: style,
       characterRestriction: limit,
+      helperExtraProps,
+      counterExtraProps,
     } = this.props;
 
     let { length: count } = this.value();
@@ -585,6 +588,7 @@ export default class TextField extends PureComponent {
       ...styleProps,
       limit,
       count,
+      counterExtraProps,
     };
 
     let helperProps = {
@@ -593,6 +597,7 @@ export default class TextField extends PureComponent {
       error,
       disabled,
       focusAnimation,
+      helperExtraProps,
     };
 
     return (

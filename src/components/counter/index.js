@@ -12,24 +12,30 @@ export default class Counter extends PureComponent {
     baseColor: PropTypes.string.isRequired,
     errorColor: PropTypes.string.isRequired,
 
-    style: Text.propTypes.style,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    counterExtraProps: PropTypes.object,
   };
 
   render() {
-    let { count, limit, baseColor, errorColor, style } = this.props;
+    let {
+      count,
+      limit,
+      baseColor,
+      errorColor,
+      style,
+      counterExtraProps = {},
+    } = this.props;
 
     if (!limit) {
       return null;
     }
 
     let textStyle = {
-      color: count > limit?
-        errorColor:
-        baseColor,
+      color: count > limit ? errorColor : baseColor,
     };
 
     return (
-      <Text style={[styles.text, style, textStyle]}>
+      <Text {...counterExtraProps} style={[styles.text, style, textStyle]}>
         {count} / {limit}
       </Text>
     );

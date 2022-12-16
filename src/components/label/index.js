@@ -43,8 +43,9 @@ export default class Label extends PureComponent {
       y1: PropTypes.number,
     }),
 
-    style: Animated.Text.propTypes.style,
-    label: PropTypes.string,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
+    label: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    lineHeight: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]), 
   };
 
   render() {
@@ -62,6 +63,7 @@ export default class Label extends PureComponent {
       style,
       focusAnimation,
       labelAnimation,
+      lineHeight,
       ...props
     } = this.props;
 
@@ -78,8 +80,9 @@ export default class Label extends PureComponent {
           outputRange: [errorColor, baseColor, tintColor],
         });
 
+    const labelLineHeight = lineHeight || fontSize;    
     let textStyle = {
-      lineHeight: fontSize,
+      lineHeight: labelLineHeight,
       fontSize,
       color,
     };
@@ -88,7 +91,7 @@ export default class Label extends PureComponent {
 
     y0 += activeFontSize;
     y0 += contentInset.label;
-    y0 += fontSize * 0.25;
+    y0 += labelLineHeight * 0.25;
 
     let containerStyle = {
       transform: [{
