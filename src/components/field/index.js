@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Platform,
 } from 'react-native';
+import { TextInputPropTypes } from 'deprecated-react-native-prop-types'
 
 import Line from '../line';
 import Label from '../label';
@@ -394,7 +395,7 @@ export default class TextField extends PureComponent {
   inputProps() {
     let store = {};
 
-    for (let key in TextInput.propTypes) {
+    for (let key in TextInputPropTypes) {
       if ('defaultValue' === key) {
         continue;
       }
